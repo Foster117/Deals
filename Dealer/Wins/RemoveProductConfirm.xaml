@@ -1,0 +1,46 @@
+﻿<Window x:Class="Dealer.RemoveProductConfirm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dealer"
+        mc:Ignorable="d"
+        Title="Удаление товара" Height="155" Width="250" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Labels_Brush" Color="#FFC7C7C7"/>
+        <SolidColorBrush x:Key="Background_Gray" Color="#FF3F3F46"/>
+    </Window.Resources>
+    <Grid Background="{DynamicResource Background_Gray}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                   Margin="10"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Foreground="{DynamicResource Labels_Brush}">
+            Вы действительно хотите удалить выбранный товар? 
+            <LineBreak/>
+            Это повлечет за собой удаление всех покупателей, купивших данный товар.
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ConfirmDelProductYesButton" 
+                    Grid.Column="0"
+                    Content="Да" 
+                    Width="75" 
+                    Click="ConfirmDelProductYesButton_Click" 
+                    IsDefault="True"/>
+            <Button x:Name="ConfirmDelProductNoButton" 
+                    Grid.Column="1"
+                    Content="Нет"
+                    Width="75"
+                    Click="ConfirmDelProductNoButton_Click"
+                    IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>

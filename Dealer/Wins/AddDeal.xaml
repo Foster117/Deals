@@ -1,0 +1,66 @@
+﻿<Window x:Name="AddDeal1" x:Class="Dealer.AddDeal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dealer"
+        mc:Ignorable="d"
+        Title="Новый покупатель" Width="235" Height="330"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Labels_Brush" Color="#FFC7C7C7"/>
+        <SolidColorBrush x:Key="Background_Gray" Color="#FF3F3F46"/>
+    </Window.Resources>
+
+    <!--HOTKEYS-->
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Print"
+                        Executed="CallCalc"/>
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Print"
+                    Gesture="Ctrl+Shift+C"/>
+    </Window.InputBindings>
+    
+    <Grid Background="{DynamicResource Background_Gray}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Имя покупателя:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource Labels_Brush}"/>
+        <ComboBox Grid.Row="1" x:Name="newDealName" Margin="10,0,0,0" HorizontalAlignment="Left" Width="200" Height="23" IsEditable="True" TabIndex="1" MaxDropDownHeight="200" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        <Label Grid.Row="2" Margin="5,0,0,0" Content="Наименование товара:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource Labels_Brush}"/>
+        <ComboBox Grid.Row="3" x:Name="newDealProduct" Margin="10,0,0,0" HorizontalAlignment="Left" Width="200" Height="23" TabIndex="2"/>
+        <Label Grid.Row="4" Content="Кол-во единиц товара:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource Labels_Brush}"/>
+        <TextBox Grid.Row="5" x:Name="newDealQuantity" Margin="10,0,0,0" HorizontalAlignment="Left" Width="175" Height="23" TabIndex="3"/>
+        <!--<Button Grid.Row="5" x:Name="quantityUp" HorizontalAlignment="Right" Width="23" Height="23" Margin="0,0,10,0" Click="quantityUp_Click"></Button>-->
+        <Image x:Name="quantityUp" 
+               Grid.Row="5"
+               HorizontalAlignment="Right"
+               Margin="0,0,10,0" 
+               Source="/Deals;component/Resources/UpArrow.png" 
+               MouseUp="quantityUp_MouseUp" Height="23" Width="23" Stretch="Fill"/>
+        <Label Grid.Row="6" x:Name="newClientPriceLabel" Content="Цена продажи:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource Labels_Brush}"/>
+        <TextBox Grid.Row="7" x:Name="newDealPrice" Margin="10,0,0,0" HorizontalAlignment="Left" Width="200" Height="23" TabIndex="4"/>
+        <Label Grid.Row="8" Content="Комментарий:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource Labels_Brush}"/>
+        <ComboBox Grid.Row="9" x:Name="newDealNote" Margin="10,0,0,0" HorizontalAlignment="Left" Width="200" Height="23" IsEditable="True" TabIndex="5"/>
+        <Grid Grid.Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="awButtonOK" Content="OK" Margin="10" Width="70" Height="23" HorizontalAlignment="Center" Click="awButtonOK_Click" IsDefault="True"/>
+            <Button Grid.Column="1" x:Name="awButtonCancel" Content="Отмена" Margin="3" Width="70" Height="23" HorizontalAlignment="Center" Click="awButtonCancel_Click" IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>

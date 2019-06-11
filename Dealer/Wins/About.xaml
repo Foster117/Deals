@@ -1,0 +1,41 @@
+﻿<Window x:Class="Dealer.Wins.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dealer.Wins"
+        mc:Ignorable="d"
+        Title="About" Height="280" Width="300"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Background_Gray" Color="#FF3F3F46"/>
+    </Window.Resources>
+
+    <Grid Background="{DynamicResource Background_Gray}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" 
+               Margin="10,30,10,10"
+               Width="100"
+               Source="/Deals;component/Resources/App_Icon_About.png"/>
+        <TextBlock Grid.Row="1" 
+                   FontSize="20"
+                   HorizontalAlignment="Center">
+            Deals v1.2
+        </TextBlock>
+        <TextBlock Grid.Row="2"
+                   FontSize="15" 
+                   Margin="10"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center">
+            by Alexander Ulianov
+            <LineBreak/> 
+            alexander.ulianov@gmail.com
+        </TextBlock>
+    </Grid>
+</Window>
